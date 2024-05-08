@@ -1,0 +1,48 @@
+1) import pandas as pd
+
+2)df=pd.read_csv(r"C:\Users\wakch\Downloads\dataset_Facebook.csv",sep=";")
+
+3)df
+
+4)df.shape
+
+5)subset1=df[10:40]
+
+6)subset1
+
+7)df.loc[[2,4,5],['Type','Category']]
+
+8)#create data subset
+  df1=df[['Page total likes','Category','Post Month','Post Weekday']].loc[0:15]
+  df1
+
+9)df2=df[['Page total likes','Category','Post Month','Post Weekday']].loc[16:30]
+  df2
+
+10)df3=df[['Page total likes','Category','Post Month','Post Weekday']].loc[31:50]
+   df3
+
+11)#merge data
+   merging=pd.concat([df1,df2,df3])
+   merging
+
+12)#sort data
+   sort_values=df.sort_values('Page total likes',ascending=False)
+   sort_values
+
+13)#transposing data
+   transposing=df.transpose()
+   transposing
+
+14)#shape data
+   shaping=df.shape
+   shaping
+
+15)#reshape data
+   pivot_table=pd.pivot_table(df,index=['Type','Category'],values='comment')
+   print(pivot_table)
+
+16)import numpy as np
+
+17)reshaping_arr = np.array([1,2,3,4,5,6])
+   reshaping_arr.reshape(3,2)

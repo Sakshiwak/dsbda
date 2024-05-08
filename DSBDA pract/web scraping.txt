@@ -1,0 +1,23 @@
+1)!pip install autoscraper
+
+2)from autoscraper import AutoScraper
+
+3)amazon_url="https://www.amazon.in/s?k=headphones"
+   wanted_list=[" ₹3,898","boAt Nirvana 751 ANC Hybrid Active Noise Cancelling Bluetooth Wireless Over Ear Headphones with Up to 65H Playtime, ASAP Charge, Ambient Sound Mode, Immersive Sound, Carry Pouch(Gunmetal Grey)"]
+
+4)scraper=AutoScraper()
+  result=scraper.build(amazon_url,wanted_list)
+  print(result)
+
+5)scraper.get_result_similar(amazon_url,grouped=True)
+
+6)scraper.set_rule_aliases({'rule_kyej':'Title'})
+  scraper.keep_rules(['rule_kyej'])
+  scraper.save('amazon-search')
+
+7)results=scraper.get_result_similar('https://www.amazon.in/s?k=wire+headphones',group_by_alias=True)
+
+8)results['Title']
+
+
+
